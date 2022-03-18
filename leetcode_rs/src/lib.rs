@@ -1,2 +1,1 @@
-pub mod ByteDance;
-pub mod google;
+mod solved;
