@@ -1,36 +1,54 @@
-static sum:i32 = 0;
-fn main() {
-    let mut rule = Vec::new();
-    rule.push(vec![2,3,4]);
-    rule.push(vec![2,3,4]);
-    rule.push(vec![3]);
-    rule.push(vec![0,1,2,4]);
-    rule.push(vec![0,1,3]);
+use std::{any::{Any, TypeId}, fmt::Debug, clone};
 
-    let mut stack = Vec::new();
-    stack.push(0);
-    let ans = recursion_sol(&mut stack, &rule);
+trait T1 {
+    type SF;
+    type F2;
+    fn test(&self);
+}
+trait T2 {
+    type SF;
+    fn test(&self);
     
-    println!("{}",ans);
+}
+struct Point{
+    pub value:i32,
+}
+impl Point{
+    fn test(&self){
+        println!("self test");
+    }
+}
+impl T1 for Point{
+    type SF = Self;
+    type F2 = i32;
+    fn test(&self){
+        println!("t1 trait test:{}",self.value);
+    }
+}
+impl T2 for Point{
+    type SF = Self;
+    fn test(&self){
+        println!("t2 trait test{}",self.value);
+    }
+}
+fn main() {
+    let reflect_i31 = 0;
+    let i32_type:i32 = 0;
+    println!("i32 type_id:{:?}",i32_type.type_id());
+    let p = Point{value:1};
+
+    let tt:&dyn T1<sf = Point, f2 = i32> = &p;
+
+    println!("Point type_id:{:?}",p.type_id());
+    T1::test(&p);
+
+    print_type_id(&reflect_i31);
+    print_type_id(&p);
 
 }
 
-fn recursion_sol(stack:&mut Vec<usize>,rule:&Vec<Vec<usize>>)->i32{
-    let top = stack.last().unwrap().clone();
-    if stack.len() == 6 {
-        if top == 0{
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-    let mut ans = 0;
-    for &i in rule[top].iter(){
-        stack.push(i);
-        ans += recursion_sol(stack, rule);
-        stack.pop();
-    }
-
-    return ans;
+fn print_type_id<T:T2>(input:&(dyn Any+'static))-> &(dyn T2<SF = T> + 'static){
+    println!("{:?}",input.type_id());
+    let dc:&dyn T2<sf = T> =  input.downcast_ref::<dyn T2<SF = T>>().unwrap();
+    return dc;
 }
-
