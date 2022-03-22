@@ -26,7 +26,7 @@ impl T1 for Point{
     }
 }
 impl T2 for Point{
-    type SF = Self;
+    type SF = Point;
     fn test(&self){
         println!("t2 trait test{}",self.value);
     }
@@ -37,18 +37,18 @@ fn main() {
     println!("i32 type_id:{:?}",i32_type.type_id());
     let p = Point{value:1};
 
-    let tt:&dyn T1<sf = Point, f2 = i32> = &p;
+    let tt:&dyn T1<SF = Point, F2 = i32> = &p;
 
     println!("Point type_id:{:?}",p.type_id());
     T1::test(&p);
 
-    print_type_id(&reflect_i31);
+    // print_type_id(&reflect_i31);
     print_type_id(&p);
 
 }
 
-fn print_type_id<T:T2>(input:&(dyn Any+'static))-> &(dyn T2<SF = T> + 'static){
+fn print_type_id(input:&dyn Any)->&dyn T2<SF = Point>{
     println!("{:?}",input.type_id());
-    let dc:&dyn T2<sf = T> =  input.downcast_ref::<dyn T2<SF = T>>().unwrap();
+    let dc:&dyn T2<SF = Point> =  input.downcast_ref::<Point>().unwrap();
     return dc;
 }
