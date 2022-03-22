@@ -7,7 +7,7 @@ use super::Solution;
 
 // @lc code=start
 impl Solution {
-    pub fn max_profit(prices: Vec<i32>) -> i32 {
+    pub fn max_profit_2(prices: Vec<i32>) -> i32 {
         let len = prices.len();
         if len <1{
             return 0;
