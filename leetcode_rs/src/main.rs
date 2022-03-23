@@ -45,10 +45,26 @@ fn main() {
     // print_type_id(&reflect_i31);
     print_type_id(&p);
 
+    let tmp  =((14 as u8) & (1 << 1)) << 5;
+    println!("tmp:{:b}",tmp);
+
 }
+
+
+
 
 fn print_type_id(input:&dyn Any)->&dyn T2<SF = Point>{
     println!("{:?}",input.type_id());
     let dc:&dyn T2<SF = Point> =  input.downcast_ref::<Point>().unwrap();
     return dc;
+}
+
+struct StructVisitor{
+    fields_seq:Vec<(String,u8)>,
+    size:usize,
+}
+impl StructVisitor{
+    fn new()->Self{
+        StructVisitor { fields_seq: vec![], size:0}
+    }
 }
