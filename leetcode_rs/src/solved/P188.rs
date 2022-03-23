@@ -21,9 +21,9 @@ impl Solution {
         let mut buy = vec![vec![0;k+1];len+1];
         let mut sell = vec![vec![0;k+1];len+1];
         buy[0][0] = -prices[0];
-        for i in 1..len{
-            buy[0][i] = i32::MIN;
-            sell[0][i] = i32::MIN;
+        for i in 1..=k{
+            buy[0][i] = i32::MIN/2;
+            sell[0][i] = i32::MIN/2;
         }
         let max = |a,b|->i32{
             if a > b{
@@ -34,20 +34,23 @@ impl Solution {
         };
 
         for (idx,&val) in prices.iter().enumerate().skip(1){
+            buy[idx][0] = max(buy[idx-1][0],sell[idx-1][0]-val);
             for i in 1..=k{
                 buy[idx][i] = max(buy[idx-1][i],sell[idx-1][i]-val);
                 sell[idx][i] = max(sell[idx-1][i],buy[idx-1][i-1]+val);
             }
         }
 
-        return sell[len][k];
+        return sell[len-1].iter().fold(0, |acc,&x|{
+            if acc > x{acc}else{x}
+        });
     }
 }
 // @lc code=end
 #[test]
 fn test(){
-    let input = vec![2,4,1];
-    let ans = 2;
+    let input = vec![2,1];
+    let ans = 0;
     let res = Solution::max_profit(2, input);
     assert_eq!(res,ans);
 }
