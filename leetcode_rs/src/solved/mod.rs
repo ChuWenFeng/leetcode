@@ -22,6 +22,8 @@ pub mod P188;
 pub mod P5;
 pub mod P179;
 pub mod Iv0105;
+pub mod P2024;
 pub mod Offfer2_04;
+pub mod P1004;
 
 pub mod test;
