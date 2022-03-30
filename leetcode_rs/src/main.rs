@@ -21,13 +21,12 @@ fn main() {
    println!("{:?}",vec);
 
     let refcell_vec = RefCell::new(vec.clone());
-    refcell_vec.borrow_mut().push(1);
+    let refv = refcell_vec.borrow_mut();
     refcell_vec.borrow();
-
-    let mut cell_vec = Cell::new(vec);
-    cell_vec.borrow_mut();
-    cell_vec.borrow()
     
+
+    
+    Box::new(1);
     // let mut hm = HashMap::new();
     
 }

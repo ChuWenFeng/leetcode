@@ -1,5 +1,6 @@
-
+#![allow(warnings, unused)]
 struct  Solution{}
+
 
 pub mod P42;
 pub mod P44;
@@ -25,5 +26,9 @@ pub mod Iv0105;
 pub mod P2024;
 pub mod Offfer2_04;
 pub mod P1004;
-
+pub mod P1606;
+pub mod P20;
+pub mod P94;
+pub mod P23;
+pub mod P22;
 pub mod test;
