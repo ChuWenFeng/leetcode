@@ -34,4 +34,6 @@ pub mod P22;
 pub mod P728;
 pub mod P102;
 pub mod P128;
+pub mod P954;
+pub mod P802;
 pub mod test;
