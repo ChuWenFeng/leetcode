@@ -1,5 +1,11 @@
 use super::Solution;
+/*
+ * @lc app=leetcode.cn id=240 lang=rust
+ *
+ * [240] 搜索二维矩阵 II
+ */
 
+// @lc code=start
 impl Solution {
     pub fn find_number_in2_d_array(matrix: Vec<Vec<i32>>, target: i32) -> bool {
 
@@ -35,13 +41,5 @@ impl Solution {
         return false;
     }
 }
+// @lc code=end
 
-#[test]
-fn test(){
-    let input1 = vec![vec![5],vec![6]];
-    let input2 = 6;
-    let ans = true;
-
-    let res = Solution::find_number_in2_d_array(input1, input2);
-    assert_eq!(res,ans);
-}
