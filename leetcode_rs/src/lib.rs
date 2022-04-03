@@ -1,2 +1,3 @@
 #![allow(warnings, unused)]
-mod solved;
+pub mod solved;
+pub mod SQL;
