@@ -41,4 +41,7 @@ pub mod P1122;
 pub mod P240;
 pub mod P307;
 pub mod P2091;
+pub mod P762;
+pub mod P191;
+pub mod P204;
 pub mod test;
