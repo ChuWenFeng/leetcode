@@ -10,23 +10,16 @@ trait T2 {
     fn test(&self);
     
 }
-
+// #[derive(Clone)]
+struct Node{
+    b:Box<usize>,
+}
+impl Node{
+    fn new()->Self{
+        Node {b:Box::new(0)}
+    }
+}
 fn main() {
- 
-    let mut vec = vec![3,2,1];
-    vec.sort_by(|a,b|{
-        return b.cmp(a)
-    });
-
-   println!("{:?}",vec);
-
-    let refcell_vec = RefCell::new(vec.clone());
-    let refv = refcell_vec.borrow_mut();
-    refcell_vec.borrow();
-    
-
-    
-    Box::new(1);
-    // let mut hm = HashMap::new();
-    
+    let list:[Option<Node>;3] = [None,None,None];
+    let lv:Vec<Option<Node>> = vec![None;3];
 }
