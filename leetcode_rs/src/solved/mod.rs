@@ -49,4 +49,6 @@ pub mod P310;
 pub mod P60;
 pub mod P796;
 pub mod P1032;
+pub mod P1652;
+pub mod P31;
 pub mod test;
