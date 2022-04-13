@@ -20,6 +20,8 @@ impl Node{
     }
 }
 fn main() {
-    let list:[Option<Node>;3] = [None,None,None];
-    let lv:Vec<Option<Node>> = vec![None;3];
+    let mut hash = HashMap::new();
+    hash.insert(0, 0);
+    hash.remove(&0);
+    println!("{:?}",hash.get(&0));
 }
