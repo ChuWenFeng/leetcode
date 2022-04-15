@@ -1,4 +1,4 @@
-use std::{any::{Any, TypeId}, fmt::Debug, clone, collections::HashMap, cell::{RefCell, Cell}, borrow::{BorrowMut, Borrow}};
+use std::{any::{Any, TypeId}, fmt::Debug, clone, collections::{HashMap, VecDeque}, cell::{RefCell, Cell}, borrow::{BorrowMut, Borrow}, rc::Rc};
 
 trait T1 {
     type SF;
@@ -24,4 +24,8 @@ fn main() {
     hash.insert(0, 0);
     hash.remove(&0);
     println!("{:?}",hash.get(&0));
+    let vd:VecDeque<i32> = std::collections::VecDeque::new();
+    Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
+        
+    });
 }

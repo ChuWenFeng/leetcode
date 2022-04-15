@@ -61,10 +61,10 @@ impl RandomizedSet {
         
     }
     
-    fn get_random(&self) -> i32 {
-        let r = rand::random::<usize>() % self.nums.len();
-        self.nums[r]
-    }
+    // fn get_random(&self) -> i32 {
+    //     let r = rand::random::<usize>() % self.nums.len();
+    //     self.nums[r]
+    // }
 }
 
 /*
