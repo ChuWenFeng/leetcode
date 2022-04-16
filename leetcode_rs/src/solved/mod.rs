@@ -67,4 +67,8 @@ pub mod P1803;
 pub mod P385;
 pub mod P6;
 pub mod P146;
+pub mod P479;
+pub mod P50;
+pub mod P1641;
+pub mod P56;
 pub mod test;
