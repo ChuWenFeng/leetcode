@@ -20,13 +20,15 @@ impl Node{
     }
 }
 fn main() {
-    let mut hash = HashMap::new();
-    hash.insert(0, 0);
-    hash.remove(&0);
-    println!("{:?}",hash.get(&0));
-    let vd:VecDeque<i32> = std::collections::VecDeque::new();
-    Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
+    // let mut hash = HashMap::new();
+    // hash.insert(0, 0);
+    // hash.remove(&0);
+    // println!("{:?}",hash.get(&0));
+    // let vd:VecDeque<i32> = std::collections::VecDeque::new();
+    // Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
         
-    });
+    // });
+    let x = "5".to_string();
+    let mut xc = Cell::new(x);
 
 }

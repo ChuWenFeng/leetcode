@@ -76,4 +76,6 @@ pub mod P386;
 pub mod P15;
 pub mod P57;
 pub mod P821;
+pub mod P388;
+pub mod P1766;
 pub mod test;
