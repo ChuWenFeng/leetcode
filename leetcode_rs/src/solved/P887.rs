@@ -49,8 +49,8 @@ impl Solution {
                 dp[i][j] = usize::MAX-1;
                 for k in 2..=j{
                     //k层摔坏坏则取dp[i-1][k-1],没坏则取dp[i][j-k]
-                    let m = if dp[i-1][k-1] > dp[i][j-k]{dp[i-1][k-1]}else{dp[i][j-k]};
-                    dp[i][j] = if dp[i][j] < 1 + m {dp[i][j]} else {1+m};
+                    let m = dp[i-1][k-1].max(dp[i][j-k]);
+                    dp[i][j] = dp[i][j].min(1+m);
                 }
             }
         }
