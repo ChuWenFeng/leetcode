@@ -80,4 +80,7 @@ pub mod P388;
 pub mod P1766;
 pub mod P824;
 pub mod P2012;
+pub mod P396;
+pub mod P2161;
+pub mod P662;
 pub mod test;
