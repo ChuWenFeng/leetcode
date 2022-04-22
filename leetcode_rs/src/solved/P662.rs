@@ -49,11 +49,27 @@ impl Solution {
         if root.is_none(){
             return 0;
         }
-        let mut curr = vec![];
-        let mut ans = 1;
+        let mut queue:VecDeque<(Option<Rc<RefCell<TreeNode>>>,i32,i32)> = VecDeque::new();
+        queue.push_back((root.clone(),0,0));
+        let mut curdepth = 0;
+        let mut left = 0;
+        let mut ans = 0;
         
+        while !queue.is_empty(){
+            let (node,depth,pos) = queue.pop_front().unwrap();
+            if let Some(n) = node{
+                queue.push_back((n.borrow().left.clone(),depth+1,pos*2));
+                queue.push_back((n.borrow().right.clone(),depth+1,pos*2+1));
+                if curdepth != depth{
+                    curdepth = depth;
+                    left = pos;
+                } 
+                ans = ans.max(pos-left+1);
+            }
 
-        ans as i32
+        }
+
+        ans
     }
 }
 // @lc code=end
