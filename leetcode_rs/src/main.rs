@@ -1,5 +1,7 @@
 use std::{any::{Any, TypeId}, fmt::Debug, clone, collections::{HashMap, VecDeque}, cell::{RefCell, Cell}, borrow::{BorrowMut, Borrow}, rc::Rc};
 
+use rand::Rng;
+
 trait T1 {
     type SF;
     type F2;
@@ -28,7 +30,9 @@ fn main() {
     // Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
         
     // });
-    let x = "5".to_string();
-    let mut xc = Cell::new(x);
+    // let x = "5".to_string();
+    // let mut xc = Cell::new(x);
+    let mut r = rand::thread_rng();
+    println!("{}",r.gen_range(0, 1));
 
 }
