@@ -26,12 +26,14 @@ fn main() {
     // hash.insert(0, 0);
     // hash.remove(&0);
     // println!("{:?}",hash.get(&0));
-    // let vd:VecDeque<i32> = std::collections::VecDeque::new();
+    let mut vd:VecDeque<i32> = std::collections::VecDeque::new();
+    vd.push_back(1);
     // Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
-        
+    
     // });
     // let x = "5".to_string();
     // let mut xc = Cell::new(x);
+    
     let mut r = rand::thread_rng();
     println!("{}",r.gen_range(0, 1));
 
