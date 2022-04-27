@@ -28,6 +28,8 @@ fn main() {
     // println!("{:?}",hash.get(&0));
     let mut vd:VecDeque<i32> = std::collections::VecDeque::new();
     vd.push_back(1);
+    vd.push_front(2);
+    // vd.allocator()
     // Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
     
     // });
