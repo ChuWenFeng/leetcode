@@ -1,6 +1,9 @@
 package solved
 
-import "testing"
+import (
+	"leetcode_go/solved/P427"
+	"testing"
+)
 
 type Solution struct{}
 
@@ -10,4 +13,13 @@ func Test_addTwoNumbers(t *testing.T) {
 
 	addTwoNumbers(&h1, &h2)
 
+}
+
+func Test_p427(t *testing.T) {
+	grid := [][]int{
+		{1, 1, 0, 0},
+		{0, 0, 1, 1},
+		{1, 1, 0, 0},
+		{0, 0, 1, 1}}
+	P427.Test(grid)
 }
