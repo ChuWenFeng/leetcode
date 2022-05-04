@@ -7,7 +7,7 @@ use super::Solution;
 
 // @lc code=start
 impl Solution {
-    pub fn is_valid(s: String) -> bool {
+    pub fn is_valid_20(s: String) -> bool {
         
         let mut stack = vec![];
         for i in s.chars(){
@@ -58,6 +58,6 @@ impl Solution {
 fn test(){
     let input = "()[]{}".to_string();
     let ans = true;
-    let res = Solution::is_valid(input);
+    let res = Solution::is_valid_20(input);
     assert_eq!(res,ans);
 }

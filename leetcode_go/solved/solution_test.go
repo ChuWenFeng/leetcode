@@ -2,6 +2,7 @@ package solved
 
 import (
 	"leetcode_go/solved/P427"
+	p591 "leetcode_go/solved/P591"
 	"testing"
 )
 
@@ -22,4 +23,13 @@ func Test_p427(t *testing.T) {
 		{1, 1, 0, 0},
 		{0, 0, 1, 1}}
 	P427.Test(grid)
+}
+
+func Test_p591(t *testing.T) {
+	code := "<A></A><B></B>"
+	ans := false
+	res := p591.Test(code)
+	if res != ans {
+		t.Fail()
+	}
 }
