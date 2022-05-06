@@ -38,11 +38,9 @@ fn main() {
     // let x = "5".to_string();
     // let mut xc = Cell::new(x);
 
-    let mut list = vec!["zero","can"];
-    list.sort_by(|a,b|{
-        a.cmp(&b)
-    });
-    println!("{:?}",list);
+    let mut s = String::with_capacity(10);
+    s.push_str("123456789");
     
-
+    
+    println!("{}",s.capacity());
 }
