@@ -104,4 +104,7 @@ pub mod P66;
 pub mod P933;
 pub mod P139;
 pub mod P140;
+pub mod P433;
+pub mod LCP25;
+pub mod P155;
 pub mod test;
