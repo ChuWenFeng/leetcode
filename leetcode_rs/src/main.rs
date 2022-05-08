@@ -22,25 +22,21 @@ impl Node{
     }
 }
 fn main() {
-    // let mut hash = HashMap::new();
-    // hash.insert(0, 0);
-    // hash.remove(&0);
-    // println!("{:?}",hash.get(&0));
+    
 
     // let mut vd:VecDeque<i32> = std::collections::VecDeque::new();
     // vd.push_back(1);
     // vd.push_front(2);
 
-    // vd.allocator()
-    // Some(Rc::new(RefCell::new(1))).as_ref().map(|r|{
+    let rc = RefCell::new(5);
     
-    // });
-    // let x = "5".to_string();
-    // let mut xc = Cell::new(x);
+    get_mut_refcell(&rc);
+    let refrc = rc.borrow();
+    println!("{}",refrc);
+    
+}
 
-    let mut s = String::with_capacity(10);
-    s.push_str("123456789");
-    
-    
-    println!("{}",s.capacity());
+fn get_mut_refcell(rc:&RefCell<i32>){
+    let mut mutrc =  rc.borrow_mut();
+    *mutrc = 7;
 }
