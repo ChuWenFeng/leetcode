@@ -10,7 +10,7 @@ use super::Solution;
 
 // @lc code=start
 impl Solution {
-    pub fn longest_palindrome(s: String) -> i32 {
+    pub fn longest_palindrome_(s: String) -> i32 {
         let mut table = vec![0;128];
         for c in s.chars(){
             let idx = c as usize;
