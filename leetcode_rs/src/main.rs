@@ -21,19 +21,19 @@ impl Node{
         Node {b:Box::new(0)}
     }
 }
+macro_rules! statements {
+    ($($stmt:stmt)*) => ($($stmt)*);
+}
+
 fn main() {
-    
-
-    // let mut vd:VecDeque<i32> = std::collections::VecDeque::new();
-    // vd.push_back(1);
-    // vd.push_front(2);
-
-    let rc = RefCell::new(5);
-    
-    get_mut_refcell(&rc);
-    let refrc = rc.borrow();
-    println!("{}",refrc);
-    
+    statements! {
+        struct Foo;
+        fn foo() {}
+        let zig = 3
+        let zig = 3;
+        if true {} else {}
+        {}
+    }
 }
 
 fn get_mut_refcell(rc:&RefCell<i32>){
