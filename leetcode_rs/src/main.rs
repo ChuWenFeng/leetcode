@@ -1,4 +1,4 @@
-use std::{any::{Any, TypeId}, fmt::Debug, clone, collections::{HashMap, VecDeque}, cell::{RefCell, Cell}, borrow::{BorrowMut, Borrow}, rc::Rc};
+use std::{any::{Any, TypeId}, fmt::Debug, clone, collections::{HashMap, VecDeque}, cell::{RefCell, Cell}, borrow::{BorrowMut, Borrow}, rc::{Rc, Weak}, sync::Arc};
 
 use rand::Rng;
 
@@ -26,14 +26,26 @@ macro_rules! statements {
 }
 
 fn main() {
-    statements! {
-        struct Foo;
-        fn foo() {}
-        let zig = 3
-        let zig = 3;
-        if true {} else {}
-        {}
-    }
+    // statements! {
+    //     struct Foo;
+    //     fn foo() {}
+    //     let zig = 3
+    //     let zig = 3;
+    //     if true {} else {}
+    //     {}
+    // }
+
+   
+    let strong = Rc::new(Box::new("Hello".to_string()));
+    let weak = Rc::downgrade(&strong);
+    let raw = weak.into_raw();
+    
+    assert_eq!(1, Rc::weak_count(&strong));
+    assert_eq!("Hello", unsafe { &**raw });
+    
+    drop(unsafe { Weak::from_raw(raw) });
+    assert_eq!(0, Rc::weak_count(&strong));
+    Arc::new(1);
 }
 
 fn get_mut_refcell(rc:&RefCell<i32>){
