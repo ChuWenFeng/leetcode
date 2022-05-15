@@ -43,7 +43,6 @@ impl TreeNode {
 // }
 use std::rc::Rc;
 use std::cell::{RefCell,Cell};
-use std::sync::Arc;
 impl Solution {
     pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
         let mut stack = vec![];

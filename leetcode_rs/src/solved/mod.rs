@@ -126,4 +126,6 @@ pub mod P224;
 pub mod P691;
 pub mod P230;
 pub mod P239;
+pub mod P812;
+pub mod P257;
 pub mod test;
