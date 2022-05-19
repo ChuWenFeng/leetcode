@@ -7,7 +7,7 @@ use super::Solution;
 
 // @lc code=start
 impl Solution {
-    pub fn max_profit(k: i32, prices: Vec<i32>) -> i32 {
+    pub fn max_profit_4(k: i32, prices: Vec<i32>) -> i32 {
         let mut ans = 0;
         
         let mut k  = k as usize;
@@ -51,6 +51,6 @@ impl Solution {
 fn test(){
     let input = vec![2,1];
     let ans = 0;
-    let res = Solution::max_profit(2, input);
+    let res = Solution::max_profit_4(2, input);
     assert_eq!(res,ans);
 }
