@@ -143,4 +143,6 @@ pub mod P436;
 pub mod P326;
 pub mod P312;
 pub mod P374;
+pub mod P961;
+pub mod P313;
 pub mod test;

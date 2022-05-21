@@ -1,5 +1,5 @@
 use super::Solution;
-unsafe fn guess(num: i32) -> i32 {}
+unsafe fn guess(num: i32) -> i32 {0}
 /*
  * @lc app=leetcode.cn id=374 lang=rust
  *
